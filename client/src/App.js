@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './views/Main';
 import { Routes, Route, Outlet, Link } from "react-router-dom";
@@ -9,13 +8,13 @@ import UpdateTravel from './views/UpdateTravel';
 function App() {
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to={"/"}>HOME</Link>
+      <nav className='nav-container'>
+        <ul className='nav justify-content-end'>
+          <li className='nav-item'>
+            <Link className='nav-link' to={"/"}>HOME</Link>
           </li>
-          <li>
-            <Link to={"/create"}>create</Link>
+          <li className='nav-item'>
+            <Link className='nav-link' to={"/create"}>create</Link>
           </li>
         </ul>
       </nav>
@@ -25,7 +24,7 @@ function App() {
         <Route path='/create' element={<CreateTravel />}/>
         <Route path='/update/:id' element={<UpdateTravel />}/>
       </Routes>
-      
+
     </div>
   );
 }

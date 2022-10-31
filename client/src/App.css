@@ -1,9 +1,61 @@
 .App {
   text-align: center;
-  background: #FC5C7D;  
-  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  
-  background: linear-gradient(to right, #6A82FB, #FC5C7D); 
+  backdrop-filter: blur(80 px) ;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url(https://images.pexels.com/photos/3601450/pexels-photo-3601450.jpeg);
+  background-repeat: no-repeat ;
+  background-size: cover;
+  /* background: #FC5C7D;
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
+  background: linear-gradient(to right, #6A82FB, #FC5C7D);  */
   height: 100vh;
+}
+.nav-container{
+  background-color: #57D0D8;
+  /* background-color: #0184D6; */
+
+}
+
+h2{
+  color: white;
+  margin-top: 50px;
+}
+.viajes-container{
+
+  margin-top: 50px;
+
+
+}
+.btn-color{
+  color:white;
+  text-decoration: none;
+}
+
+.list-container{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+
+}
+
+.link-container{
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  align-items: center;
+}
+
+.link-container:hover{
+  color: #57D0D8;
+  font-weight: 600;
+}
+
+
+.nav-link{
+  color: white;
 }
 
 .form-group{
@@ -17,7 +69,8 @@
 }
 
 .travel-form h2{
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 70px;
 }
 
 .errorcito{

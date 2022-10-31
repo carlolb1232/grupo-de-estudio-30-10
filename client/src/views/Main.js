@@ -12,7 +12,7 @@ const Main = () => {
         console.log(response.data.Travels);
         setTravels(response.data.Travels);
     }
-    
+
     useEffect(() => {
         getTravels();
     }, []);
@@ -26,8 +26,15 @@ const Main = () => {
     return (
         <div>
             <h2>Viajes</h2>
-            <ul>
-            {travels?.map((travel)=> <li key={travel._id}><Link to={`/${travel._id}`}>{travel.packageName}</Link><button><Link to={`/update/${travel._id}`}>Actualizar</Link></button><button onClick={()=>deleteTravel(travel._id)}>DELETE</button></li>)}
+            <ul className='viajes-container'>
+                {travels?.map((travel)=>
+                <li className='list-container' key={travel._id}>
+                    <Link className='link-container' to={`/${travel._id}`}>{travel.packageName}</Link>
+                    <button className='btn btn-warning'>
+                        <Link className='btn-color' to={`/update/${travel._id}`}>Actualizar</Link>
+                    </button>
+                    <button className='btn btn-danger' onClick={()=>deleteTravel(travel._id)}>Delete</button>
+                </li>)}
             </ul>
         </div>
     );
