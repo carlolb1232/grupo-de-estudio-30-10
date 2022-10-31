@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { simpleDelete } from '../services/simpleDelete';
 import { simpleGet } from '../services/simpleGet';
 
 const Main = () => {
@@ -16,11 +17,17 @@ const Main = () => {
         getTravels();
     }, []);
 
+    const deleteTravel = async (id) => {
+        const viajeBorrado = await simpleDelete(id);
+        console.log("Viaje borradito", viajeBorrado);
+        setTravels(travels.filter(travel=>travel._id !== id))
+    }
+
     return (
         <div>
             <h2>Viajes</h2>
             <ul>
-            {travels?.map((travel)=> <li key={travel._id}><Link to={`/${travel._id}`}>{travel.packageName}</Link></li>)}
+            {travels?.map((travel)=> <li key={travel._id}><Link to={`/${travel._id}`}>{travel.packageName}</Link><button><Link to={`/update/${travel._id}`}>Actualizar</Link></button><button onClick={()=>deleteTravel(travel._id)}>DELETE</button></li>)}
             </ul>
         </div>
     );

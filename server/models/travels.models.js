@@ -23,7 +23,7 @@ const TravelSchema = new mongoose.Schema(
         3, "El nombre del destino debe tener 3 caracteres como mínimo"
       ],
       maxlength:[
-        20, "El nombre del destino es muy largo "
+        20, "El nombre del destino es muy largo"
       ]
     },
     origin:{
@@ -35,7 +35,7 @@ const TravelSchema = new mongoose.Schema(
         3, "El nombre del origen debe tener 3 caracteres como mínimo"
       ],
       maxlength:[
-        20, "El nombre del origen es muy largo "
+        20, "El nombre del origen es muy largo"
       ]
     },
     price: {

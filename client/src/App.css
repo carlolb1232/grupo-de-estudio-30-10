@@ -1,5 +1,27 @@
 .App {
   text-align: center;
+  background: #FC5C7D;  
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  
+  background: linear-gradient(to right, #6A82FB, #FC5C7D); 
+  height: 100vh;
+}
+
+.form-group{
+  margin-top: 12px;
+}
+
+.travel-form{
+  width: 30%;
+  margin: 0 auto;
+  color: white;
+}
+
+.travel-form h2{
+  margin-bottom: 30px;
+}
+
+.errorcito{
+  color: red;
 }
 
 .App-logo {
