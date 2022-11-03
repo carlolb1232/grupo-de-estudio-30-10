@@ -1,6 +1,8 @@
 import React from 'react';
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import moment from 'moment';
+
 
 const TravelForm = (props) => {
 
@@ -15,7 +17,7 @@ const TravelForm = (props) => {
             destination:travel.destination,
             origin:travel.origin,
             price:travel.price,
-            arrive_date:travel.arrive_date
+            arrive_date: moment(travel.arrive_date).format("yyyy-DD-MM")
           }
         }
 
@@ -53,7 +55,7 @@ const TravelForm = (props) => {
           onSubmitProp(values);
         }}
       >
-      
+
       {({errors, touched, handleSubmit})=>{
         return(
           <div className='travel-form'>
@@ -61,56 +63,56 @@ const TravelForm = (props) => {
             <Form>
               <div className="form-group">
                 <label htmlFor="packageName">Nombre del paquete: </label>
-                <Field 
-                  id="packageName" 
-                  type="text" 
-                  placeholder="Ingresa nombre del paquete" 
-                  name="packageName" 
-                  className="form-control" 
+                <Field
+                  id="packageName"
+                  type="text"
+                  placeholder="Ingresa nombre del paquete"
+                  name="packageName"
+                  className="form-control"
                 />
                 {errors.packageName && touched.packageName && <p className='errorcito'> {errors.packageName} </p>}
               </div>
               <div className="form-group">
                 <label htmlFor="destination">Nombre del destino: </label>
-                <Field 
-                  id="destination" 
-                  type="text" 
-                  placeholder="Ingresa nombre del destino" 
-                  name="destination" 
-                  className="form-control" 
+                <Field
+                  id="destination"
+                  type="text"
+                  placeholder="Ingresa nombre del destino"
+                  name="destination"
+                  className="form-control"
                 />
                 {errors.destination && touched.destination && <p className='errorcito'> {errors.destination} </p>}
               </div>
               <div className="form-group">
                 <label htmlFor="origin">Nombre del origen: </label>
-                <Field 
-                  id="origin" 
-                  type="text" 
-                  placeholder="Ingresa nombre del paquete" 
-                  name="origin" 
-                  className="form-control" 
+                <Field
+                  id="origin"
+                  type="text"
+                  placeholder="Ingresa nombre del paquete"
+                  name="origin"
+                  className="form-control"
                 />
                 {errors.origin && touched.origin && <p className='errorcito'> {errors.origin} </p>}
               </div>
               <div className="form-group">
                 <label htmlFor="price">Precio: </label>
-                <Field 
-                  id="price" 
-                  type="number" 
-                  placeholder="Ingresa el precio del paquete" 
-                  name="price" 
-                  className="form-control" 
+                <Field
+                  id="price"
+                  type="number"
+                  placeholder="Ingresa el precio del paquete"
+                  name="price"
+                  className="form-control"
                 />
                 {errors.price && touched.price && <p className='errorcito'> {errors.price} </p>}
               </div>
               <div className="form-group">
                 <label htmlFor="arrive_date">Fecha de salida: </label>
-                <Field 
-                  id="arrive_date" 
-                  type="date" 
-                  placeholder="Ingresa la fecha" 
-                  name="arrive_date" 
-                  className="form-control" 
+                <Field
+                  id="arrive_date"
+                  type="date"
+                  placeholder="Ingresa la fecha"
+                  name="arrive_date"
+                  className="form-control"
                 />
                 {errors.arrive_date && touched.arrive_date && <p className='errorcito'> {errors.arrive_date} </p>}
               </div>
